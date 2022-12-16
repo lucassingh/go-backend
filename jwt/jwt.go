@@ -13,7 +13,7 @@ func GenerateJWT(t models.User) (string, error) {
 	privateKey := []byte("TH!s!SDev3L0pmenTK3eyFoRc0Urs3GO")
 
 	payload := jwt.MapClaims{
-		"_id":      t.ID.Hex(),
+		"_id":      t.ID,
 		"name":     t.Name,
 		"lastName": t.LastName,
 		"email":    t.Email,

@@ -8,7 +8,7 @@ import (
 
 /*User is the structure of user type*/
 type User struct {
-	ID       primitive.ObjectID `bson:"_id, omitempty" json:"id"`
+	ID       primitive.ObjectID `json:"id" bson:"_id,omitempty"`
 	Name     string             `bson:"name, omitempty" json:"name"`
 	LastName string             `bson:"lastName, omitempty" json:"lastName"`
 	DateBorn time.Time          `bson:"dateBorn, omitempty" json:"dateBorn"`

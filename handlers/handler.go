@@ -20,6 +20,8 @@ func HandlersCon() {
 
 	router.HandleFunc("/login", middlew.CheckDB(routers.Login)).Methods("POST")
 
+	router.HandleFunc("/view-profile", middlew.CheckDB(middlew.ValidateJWT(routers.ViewProfile))).Methods("GET")
+
 	PORT := os.Getenv("PORT")
 
 	if PORT == "" {

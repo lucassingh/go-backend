@@ -44,7 +44,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		Token: jwtKey,
 	}
 
-	w.Header().Set("Content-type", "aplication/json")
+	w.Header().Set("Content-Type", "aplication/json")
 
 	w.WriteHeader(http.StatusCreated)
 
