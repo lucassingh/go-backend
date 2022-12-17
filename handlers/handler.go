@@ -22,6 +22,8 @@ func HandlersCon() {
 
 	router.HandleFunc("/view-profile", middlew.CheckDB(middlew.ValidateJWT(routers.ViewProfile))).Methods("GET")
 
+	router.HandleFunc("/update-profile", middlew.CheckDB(middlew.ValidateJWT(routers.UpdateProfile))).Methods("PUT")
+
 	PORT := os.Getenv("PORT")
 
 	if PORT == "" {
