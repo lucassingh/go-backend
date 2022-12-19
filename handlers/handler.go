@@ -24,6 +24,8 @@ func HandlersCon() {
 
 	router.HandleFunc("/update-profile", middlew.CheckDB(middlew.ValidateJWT(routers.UpdateProfile))).Methods("PUT")
 
+	router.HandleFunc("/create-tweet", middlew.CheckDB(middlew.ValidateJWT(routers.CreateTweet))).Methods("POST")
+
 	PORT := os.Getenv("PORT")
 
 	if PORT == "" {
