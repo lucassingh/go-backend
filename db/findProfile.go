@@ -34,7 +34,7 @@ func FindProfile(ID string) (models.User, error) {
 	profile.Password = ""
 
 	if err != nil {
-		fmt.Println("Registro no encontrado" + err.Error())
+		fmt.Println("Register not found" + err.Error())
 		return profile, err
 	}
 
