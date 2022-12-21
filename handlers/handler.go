@@ -30,6 +30,14 @@ func HandlersCon() {
 
 	router.HandleFunc("/delete-tweet", middlew.CheckDB(middlew.ValidateJWT(routers.DeleteTwt))).Methods("DELETE")
 
+	router.HandleFunc("/upload-avatar", middlew.CheckDB(middlew.ValidateJWT(routers.UploadAvatar))).Methods("POST")
+
+	router.HandleFunc("/get-avatar", middlew.CheckDB(middlew.ValidateJWT(routers.GetAvatar))).Methods("GET")
+
+	router.HandleFunc("/upload-banner", middlew.CheckDB(middlew.ValidateJWT(routers.UploadBanner))).Methods("POST")
+
+	router.HandleFunc("/get-banner", middlew.CheckDB(middlew.ValidateJWT(routers.GetBanner))).Methods("GET")
+
 	PORT := os.Getenv("PORT")
 
 	if PORT == "" {

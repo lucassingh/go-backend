@@ -12,7 +12,7 @@ func DeleteTwt(w http.ResponseWriter, r *http.Request) {
 	ID := r.URL.Query().Get("id")
 
 	if len(ID) < 1 {
-		http.Error(w, "You must send id parameter", http.StatusBadRequest)
+		http.Error(w, "You must send ID parameter", http.StatusBadRequest)
 		return
 	}
 
